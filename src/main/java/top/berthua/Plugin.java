@@ -41,7 +41,7 @@ public final class Plugin extends JavaPlugin {
         for(int c = 0;c<groups.size();c++){
             groups.get(c).sendMessage(new PlainText("Bert Bot已加载！By Bert"));
         }
-        ArrayList<String> keywords = (ArrayList<String>) myData.getKeywords();
+        List<String> keywords = myData.getKeywords();
         keywords.add("傻逼");
         keywords.add("sb");
         keywords.add("你妈");
