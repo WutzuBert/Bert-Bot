@@ -110,6 +110,11 @@ public final class Plugin extends JavaPlugin {
                     for(int a = 0;a < groups.size();a++){
                         groups.get(a).sendMessage(i[t]);
                     }
+                    try{
+                        Thread.sleep(1000);
+                    }catch(InterruptedException e){
+                        e.printStackTrace();
+                    }
                 }
             }
         }
