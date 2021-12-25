@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 public final class Plugin extends JavaPlugin {
     public static Plugin INSTANCE = new Plugin();
     public Plugin() {
-        super(new JvmPluginDescriptionBuilder("top.berthua.plugin", "1.2.6-SNAPSHOT").build());
+        super(new JvmPluginDescriptionBuilder("top.berthua.plugin", "1.2.7-SNAPSHOT").build());
     }
     @Override
     public void onEnable() {
@@ -66,9 +66,16 @@ public final class Plugin extends JavaPlugin {
                 event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("建议已提交至开发者！")));
             }
             /*-------------------------------群管功能-----------------------------------*/
-
+            for(int t = 0;t<keywords.size();t++){
+                if(content.contains(keywords.get(t))){
+                    MessageSource.recall(chain);
+                    event.getSender().mute(60);
+                    event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("你触发了违禁词“"+keywords.get(t)+"”")));
+                }
+            }
+            MemberPermission permission = event.getSender().getPermission();
             if(content.contains("#添加关键词 ")){
-                MemberPermission permission = event.getSender().getPermission();
+
                 if(permission == MemberPermission.MEMBER){
                     event.getSubject().sendMessage((new At(event.getSender().getId()).plus(new PlainText("仅管理员可进行该操作！"))));
                 }else{
@@ -76,11 +83,21 @@ public final class Plugin extends JavaPlugin {
                     event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("成功添加关键词“"+content.replace("#添加关键词 ","")+"”")));
                 }
             }
-            for(int t = 0;t<keywords.size();t++){
-                if(content.contains(keywords.get(t))){
-                    MessageSource.recall(chain);
-                    event.getSender().mute(60);
-                    event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("你触发了违禁词“"+keywords.get(t)+"”")));
+            if(content.contains("#删除关键词 ")){
+                if(permission == MemberPermission.MEMBER){
+                    event.getSubject().sendMessage((new At(event.getSender().getId()).plus(new PlainText("仅管理员可进行该操作！"))));
+                }else{
+                    if(keywords.contains(content.replace("#删除关键词 ",""))){
+                        for(int t=0;t<keywords.size();t++){
+                            if(keywords.get(t).equals(content.replace("#删除关键词 ",""))){
+                                keywords.remove(t);
+                            }
+                        }
+                        event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("成功删除关键词“"+content.replace("#删除关键词 ","”"))));
+                    }else{
+                        event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("未找到关键词“"+content.replace("#删除关键词 ","“，请尝试”#列出关键词”检查关键词是否存在"))));
+                    }
+
                 }
             }
         });
