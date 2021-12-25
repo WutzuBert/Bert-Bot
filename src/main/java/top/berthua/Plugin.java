@@ -66,15 +66,9 @@ public final class Plugin extends JavaPlugin {
                 event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("建议已提交至开发者！")));
             }
             /*-------------------------------群管功能-----------------------------------*/
-            for(int t = 0;t<keywords.size();t++){
-                if(content.contains(keywords.get(t))){
-                    MessageSource.recall(chain);
-                    event.getSender().mute(60);
-                    event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("你触发了违禁词“"+keywords.get(t)+"”")));
-                }
-            }
+
             MemberPermission permission = event.getSender().getPermission();
-            if(content.contains("#列出关键词 ")){
+            if(content.contains("#列出关键词")){
                 if(permission == MemberPermission.MEMBER){
                     event.getSubject().sendMessage((new At(event.getSender().getId()).plus(new PlainText("仅管理员可进行该操作！"))));
                 }else{
@@ -100,11 +94,17 @@ public final class Plugin extends JavaPlugin {
                                 keywords.remove(t);
                             }
                         }
-                        event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("成功删除关键词“"+content.replace("#删除关键词 ","”"))));
+                        event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("成功删除关键词“"+content.replace("#删除关键词 ","")+"”")));
                     }else{
-                        event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("未找到关键词“"+content.replace("#删除关键词 ","“，请尝试”#列出关键词”检查关键词是否存在"))));
+                        event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("未找到关键词“"+content.replace("#删除关键词 ","")+"“，请尝试”#列出关键词”检查关键词是否存在")));
                     }
-
+                }
+            }
+            for(int t = 0;t<keywords.size();t++){
+                if(content.contains(keywords.get(t))){
+                    MessageSource.recall(chain);
+                    event.getSender().mute(60);
+                    event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("你触发了违禁词“"+keywords.get(t)+"”")));
                 }
             }
         });
