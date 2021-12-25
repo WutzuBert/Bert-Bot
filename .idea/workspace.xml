@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59337dcb-938c-4e70-a4e2-e550db015601" name="更改" comment="更新”列出关键词“”删除关键词“功能" />
+    <list default="true" id="59337dcb-938c-4e70-a4e2-e550db015601" name="更改" comment="更新于2021/12/26 0:29" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -255,7 +255,28 @@
       <option name="project" value="LOCAL" />
       <updated>1640449414027</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="更新”列出关键词“”删除关键词“功能">
+      <created>1640449665694</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1640449665694</updated>
+    </task>
+    <task id="LOCAL-00013" summary="更新于2021/12/26 0:29">
+      <created>1640449750523</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1640449750523</updated>
+    </task>
+    <task id="LOCAL-00014" summary="更新于2021/12/26 0:29">
+      <created>1640449764825</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1640449764825</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -288,6 +309,7 @@
     <MESSAGE value="更新“删除关键词”功能" />
     <MESSAGE value="更新版本至”1.2.7-SNAPSHOT“" />
     <MESSAGE value="更新”列出关键词“”删除关键词“功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新”列出关键词“”删除关键词“功能" />
+    <MESSAGE value="更新于2021/12/26 0:29" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新于2021/12/26 0:29" />
   </component>
 </project>
