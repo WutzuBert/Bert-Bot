@@ -74,8 +74,15 @@ public final class Plugin extends JavaPlugin {
                 }
             }
             MemberPermission permission = event.getSender().getPermission();
+            if(content.contains("#列出关键词 ")){
+                if(permission == MemberPermission.MEMBER){
+                    event.getSubject().sendMessage((new At(event.getSender().getId()).plus(new PlainText("仅管理员可进行该操作！"))));
+                }else{
+                    event.getSender().sendMessage(new PlainText("关键词列表："+keywords.toString()));
+                    event.getSubject().sendMessage((new At(event.getSender().getId()).plus(new PlainText("列表已私发，请在消息栏查看！"))));
+                }
+            }
             if(content.contains("#添加关键词 ")){
-
                 if(permission == MemberPermission.MEMBER){
                     event.getSubject().sendMessage((new At(event.getSender().getId()).plus(new PlainText("仅管理员可进行该操作！"))));
                 }else{
