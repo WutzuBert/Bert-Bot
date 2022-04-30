@@ -5,13 +5,16 @@ plugins {
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.serialization") version kotlinVersion
 
-    id("net.mamoe.mirai-console") version "2.8.2"
+    id("net.mamoe.mirai-console") version "2.9.2"
 }
 
 group = "top.berthua"
-version = "1.2.7-SNAPSHOT"
+version = "1.2.9-SNAPSHOT"
 
 repositories {
     maven("https://maven.aliyun.com/repository/public")
     mavenCentral()
+}
+dependencies {
+    implementation("com.alibaba:fastjson:1.2.80")
 }
