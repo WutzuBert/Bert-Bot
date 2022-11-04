@@ -1,5 +1,6 @@
 package top.berthua;
 
+import com.alibaba.fastjson.JSONObject;
 import net.mamoe.mirai.Bot;
 import net.mamoe.mirai.BotFactory;
 import net.mamoe.mirai.console.plugin.jvm.JavaPlugin;
@@ -12,7 +13,15 @@ import net.mamoe.mirai.message.data.*;
 import net.mamoe.mirai.utils.BotConfiguration;
 import net.mamoe.mirai.utils.ExternalResource;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -86,64 +95,45 @@ public final class Plugin extends JavaPlugin {
                     }
                 }
             }
+            if (content.equals("#一言")){
+                try {
+                    URL url = new URL("https://saying.api.azwcl.com/saying/get");
+                    HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+                    InputStream responseStream = httpConn.getResponseCode() / 100 == 2
+                            ? httpConn.getInputStream()
+                            : httpConn.getErrorStream();
+                    CharsetDecoder decoder = Charset.forName("utf-8").newDecoder();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(responseStream,decoder));
+                    String response = bufferedReader.readLine();
+                    response = JSONObject.parseObject(response).getJSONObject("data").getString("content")+"\n——"+JSONObject.parseObject(response).getJSONObject("data").getString("author");
+                    event.getSubject().sendMessage(response);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            if (content.startsWith("#群发 ") && event.getSender().getId() == 2138681574){
+                for (Group value : groups) {
+                    value.sendMessage(new PlainText("Bot群发通知：\n"+content.replace("#群发 ","")));
+                }
+            }
             /*-------------------------------群管功能-----------------------------------*/
+            /*try {
+                URL url = new URL("https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=dNYphLGB3VQlwGUlETjM8g1u&client_secret=Rb64eXyrbQCj5SxPw0k1ffGvTqAGhbKc&");
+                HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+                httpConn.setRequestMethod("POST");
+                httpConn.setRequestProperty("user-agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36 Edg/99.0.1150.55");
+                InputStream responseStream = httpConn.getResponseCode() / 100 == 2
+                        ? httpConn.getInputStream()
+                        : httpConn.getErrorStream();
+                CharsetDecoder decoder = Charset.forName("utf-8").newDecoder();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(responseStream,decoder));
+                String response = bufferedReader.readLine();
+                String accessToken = JSONObject.parseObject(response).getString("access_token");
+                BaiDuAI.main(accessToken,event);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }*/
 
-            MemberPermission permission = event.getSender().getPermission();
-            if(content.contains("#列出关键词")){
-                if(permission == MemberPermission.MEMBER){
-                    event.getSubject().sendMessage((new At(event.getSender().getId()).plus(new PlainText("仅管理员可进行该操作！\n" +
-                            "——————————————————————\n" +
-                            "爱发电赞助链接：https://afdian.net/@Wutzu"))));
-                }else{
-                    event.getSender().sendMessage(new PlainText("关键词列表："+ keywords));
-                    event.getSubject().sendMessage((new At(event.getSender().getId()).plus(new PlainText("列表已私发，请在消息栏查看！\n" +
-                            "——————————————————————\n" +
-                            "爱发电赞助链接：https://afdian.net/@Wutzu"))));
-                }
-            }
-            if(content.contains("#添加关键词 ")){
-                if(permission == MemberPermission.MEMBER){
-                    event.getSubject().sendMessage((new At(event.getSender().getId()).plus(new PlainText("仅管理员可进行该操作！\n" +
-                            "——————————————————————\n" +
-                            "爱发电赞助链接：https://afdian.net/@Wutzu"))));
-                }else{
-                    keywords.add(content.replace("#添加关键词 ",""));
-                    event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("成功添加关键词“"+content.replace("#添加关键词 ","")+"”\n" +
-                            "——————————————————————\n" +
-                            "爱发电赞助链接：https://afdian.net/@Wutzu")));
-                }
-            }
-            if(content.contains("#删除关键词 ")){
-                if(permission == MemberPermission.MEMBER){
-                    event.getSubject().sendMessage((new At(event.getSender().getId()).plus(new PlainText("仅管理员可进行该操作！\n" +
-                            "——————————————————————\n" +
-                            "爱发电赞助链接：https://afdian.net/@Wutzu"))));
-                }else{
-                    if(keywords.contains(content.replace("#删除关键词 ",""))){
-                        for(int t=0;t<keywords.size();t++){
-                            if(keywords.get(t).equals(content.replace("#删除关键词 ",""))){
-                                keywords.remove(t);
-                            }
-                        }
-                        event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("成功删除关键词“"+content.replace("#删除关键词 ","")+"”\n" +
-                                "——————————————————————\n" +
-                                "爱发电赞助链接：https://afdian.net/@Wutzu")));
-                    }else{
-                        event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("未找到关键词“"+content.replace("#删除关键词 ","")+"“，请尝试”#列出关键词”检查关键词是否存在\n" +
-                                "——————————————————————\n" +
-                                "爱发电赞助链接：https://afdian.net/@Wutzu")));
-                    }
-                }
-            }
-            for (String keyword : keywords) {
-                if (content.contains(keyword)) {
-                    MessageSource.recall(chain);
-                    event.getSender().mute(60);
-                    event.getSubject().sendMessage((new At(event.getSender().getId())).plus(new PlainText("你触发了违禁词“" + keyword + "”\n" +
-                            "——————————————————————\n" +
-                            "爱发电赞助链接：https://afdian.net/@Wutzu")));
-                }
-            }
         });
         //noinspection InfiniteLoopStatement
         while(true) {

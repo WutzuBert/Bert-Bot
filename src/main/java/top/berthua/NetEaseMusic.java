@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import net.mamoe.mirai.contact.Group;
 import net.mamoe.mirai.contact.Member;
-import net.mamoe.mirai.event.GlobalEventChannel;
+import net.mamoe.mirai.event.*;
 import net.mamoe.mirai.event.ListeningStatus;
 import net.mamoe.mirai.event.events.GroupMessageEvent;
 import net.mamoe.mirai.message.data.*;
@@ -23,7 +23,7 @@ import java.util.List;
 
 public class NetEaseMusic{
     public static void main(String searchName, Group subject, Member sender)throws Exception{
-        URL url = new URL("https://neteasemusicapi-delta.vercel.app/search?keywords="+URLEncoder.encode(searchName,StandardCharsets.UTF_8));
+        URL url = new URL("https://ncm.lgc2333.top/search?keywords="+URLEncoder.encode(searchName,StandardCharsets.UTF_8));
         HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
         httpConn.setRequestMethod("POST");
         httpConn.setRequestProperty("user-agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36 Edg/99.0.1150.55");
