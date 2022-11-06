@@ -10,6 +10,5 @@ public class WerewolvesKilled {
     public static void start(Member[] players,String[] identities){
         Map<Member,String> playersMap = IntStream.range(0, players.length).boxed()
                 .collect(Collectors.toMap(i -> players[i], i -> identities[i]));
-
     }
 }
