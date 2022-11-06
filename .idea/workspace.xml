@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59337dcb-938c-4e70-a4e2-e550db015601" name="更改" comment="更新于2022/11/4 8:10">
+    <list default="true" id="59337dcb-938c-4e70-a4e2-e550db015601" name="更改" comment="更新于2022/11/4 9:20">
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/berthua/WerewolvesKilled.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,6 +119,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="项目" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -300,6 +302,8 @@
       <workItem from="1667458577389" duration="4108000" />
       <workItem from="1667463504880" duration="4395000" />
       <workItem from="1667517100913" duration="1357000" />
+      <workItem from="1667546795447" duration="2162000" />
+      <workItem from="1667697182489" duration="2085000" />
     </task>
     <task id="LOCAL-00001" summary="更改">
       <created>1640346296295</created>
@@ -420,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651318657134</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="更新于2022/11/4 9:20">
+      <created>1667524691794</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1667524691794</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +468,8 @@
     <MESSAGE value="更新”列出关键词“”删除关键词“功能" />
     <MESSAGE value="更新于2021/12/26 0:29" />
     <MESSAGE value="更新于2021/12/26 3:38" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新于2021/12/26 3:38" />
+    <MESSAGE value="更新于2022/11/4 9:20" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新于2022/11/4 9:20" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
