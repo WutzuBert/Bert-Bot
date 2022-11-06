@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59337dcb-938c-4e70-a4e2-e550db015601" name="更改" comment="更新于2022/11/4 9:20">
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/berthua/WerewolvesKilled.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="59337dcb-938c-4e70-a4e2-e550db015601" name="更改" comment="更新于2022/11/6 19:27" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -469,7 +466,9 @@
     <MESSAGE value="更新于2021/12/26 0:29" />
     <MESSAGE value="更新于2021/12/26 3:38" />
     <MESSAGE value="更新于2022/11/4 9:20" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新于2022/11/4 9:20" />
+    <MESSAGE value="更新于2022/11/6 19:25" />
+    <MESSAGE value="更新于2022/11/6 19:27" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新于2022/11/6 19:27" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
