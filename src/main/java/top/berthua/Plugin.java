@@ -40,6 +40,7 @@ public final class Plugin extends JavaPlugin {
         Bot bot = BotFactory.INSTANCE.newBot(qq, password, new BotConfiguration() {{
             // 配置，例如：
             fileBasedDeviceInfo("botdeviceinfo.json");
+            setProtocol(MiraiProtocol.ANDROID_PAD);
         }});
         bot.login();
         ArrayList<Group> groups = new ArrayList<>();

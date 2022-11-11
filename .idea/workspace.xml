@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59337dcb-938c-4e70-a4e2-e550db015601" name="更改" comment="更新于2022/11/6 19:27" />
+    <list default="true" id="59337dcb-938c-4e70-a4e2-e550db015601" name="更改" comment="更新于2022/11/6 19:27">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2022_11_4_8_28____.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/_2022_11_4_8_28____.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/berthua/Plugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/berthua/Plugin.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +137,28 @@
       <recent name="D:\Bert-Bot-Main\Bert-Bot-Main\src\main\java\top\berthua" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.untitled1 [jar]">
+  <component name="RunManager" selected="Gradle.Bot [buildPluginLegacy]">
+    <configuration name="Bot [buildPluginLegacy]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildPluginLegacy" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="Bot [buildPlugin] (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -222,27 +247,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="untitled1 [javadoc]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="javadoc" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Bot" />
       <method v="2">
@@ -257,19 +261,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Gradle.Bot [buildPluginLegacy]" />
       <item itemvalue="Gradle.Bot [buildPlugin]" />
       <item itemvalue="Gradle.Bot [buildPlugin] (1)" />
       <item itemvalue="Gradle.untitled1 [buildPlugin]" />
       <item itemvalue="Gradle.untitled1 [jar]" />
-      <item itemvalue="Gradle.untitled1 [javadoc]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Bot [buildPluginLegacy]" />
         <item itemvalue="Gradle.untitled1 [jar]" />
         <item itemvalue="Gradle.Bot [buildPlugin] (1)" />
         <item itemvalue="Gradle.Bot [buildPlugin]" />
         <item itemvalue="Gradle.untitled1 [buildPlugin]" />
-        <item itemvalue="Gradle.untitled1 [javadoc]" />
       </list>
     </recent_temporary>
   </component>
